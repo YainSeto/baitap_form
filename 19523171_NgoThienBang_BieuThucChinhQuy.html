@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function KiemTraHT(){
+            var mauHT = /(^[A-Za-z]+)((\s{1}[A-Za-z]+){1,})$/;
+            let chuoi= document.getElementById('txtHT').value.trim();
+            if(mauHT.test(chuoi) == true) {
+                spHT.innerText = "Nhập đúng mẫu";
+            } else {
+                spHT.innerText = "Nhập sai mẫu";
+            }
+        }
+        function KiemTraTK(){
+            var mauTK = /^[A-Za-z0-9_-]{6,18}$/;
+            let chuoi= document.getElementById('txtTK').value.trim();
+            if(mauTK.test(chuoi)==true){
+                spTK.innerText="Nhập đúng mẫu";
+            } else {
+                spTK.innerText="Nhập sai mẫu";
+            }
+        }
+    </script>
+    <form action="" method="post" style="width: 500px;">
+        <fieldset>
+            <legend>Thông tin kiểm tra</legend>
+            <label for="lblHT">Họ tên của bạn:</label>
+            <input type="text" name="txtHT" id="txtHT" onblur="return KiemTraHT();">
+            <span id="spHT">Chưa kiểm tra</span>
+            <br><br>
+            <label for="lblTK">Tên tài khoảng:</label>
+            <input type="text" name="txtTK" id="txtTK" onblur="return KiemTraTK();">
+            <span id="spTK">Chưa kiểm tra</span>
+            <br><br>
+        </fieldset>
+    </form>
+</body>
+</html>
